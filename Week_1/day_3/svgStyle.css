@@ -1,0 +1,13 @@
+rect.board {
+    fill:rgb(235,185,123);
+    stroke: black;
+    stroke-width: 2px;
+}
+
+rect.square {
+    fill: white;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+sircle
