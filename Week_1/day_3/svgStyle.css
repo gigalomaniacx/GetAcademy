@@ -4,9 +4,89 @@ rect.board {
     stroke-width: 2px;
 }
 
+rect.part{
+    fill:transparent;
+    stroke: black;
+    stroke-width: 1px;
+}
+
 rect.square {
     fill: white;
     stroke: black;
     stroke-width: 1px;
 }
 
+rect.rsquare {
+    fill: red;
+    stroke:black;
+    stroke-width: 1px;
+}
+
+rect.ysquare {
+    fill: yellow;
+    stroke:black;
+    stroke-width: 1px;
+}
+
+rect.bsquare{
+    fill: blue;
+    stroke:black;
+    stroke-width: 1px;
+}
+
+rect.gsquare{
+    fill: green;
+    stroke:black;
+    stroke-width: 1px;
+}
+
+circle.rcircle {
+    fill:red;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+circle.ycircle {
+    fill:yellow;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+circle.bcircle {
+    fill:blue;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+circle.gcircle {
+    fill:green;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+circle.wcircle {
+    fill: white;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+polygon.rpoly {
+    fill: red;
+    stroke: black;
+    stroke-width: 1px;
+}
+polygon.gpoly {
+    fill: green;
+    stroke: black;
+    stroke-width: 1px;
+}
+polygon.ypoly {
+    fill: yellow;
+    stroke: black;
+    stroke-width: 1px;
+}
+polygon.bpoly {
+    fill: blue;
+    stroke: black;
+    stroke-width: 1px;
+}
