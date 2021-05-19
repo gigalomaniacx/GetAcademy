@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="utf-8">
+    <title>Onclick quizz</title>
+</head>
+<h1>Quizz of the centuary</h1>
+<h2>What is zelda Ocarina of time's first temple</h2>
+<button id="butoon" onclick="cAnswer()">Deku tree</button>
+<button id="button1" onclick="wAswer()">Forrest temple</button>
+<button id="button2" onclick="wAswer()">Temple of time</button>
+<h3 id="ans">Press the button with the correct answer</h3>
+
+<script>
+    function cAnswer() {
+        document.getElementById('ans').innerHTML = 'Correct answer!';
+    }
+    function wAswer() {
+        document.getElementById('ans').innerHTML = 'Wrong answer, try again.';
+    }
+</script>
+</html>
