@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kodelås</title>
+    </head>
+    <body>
+
+        <button onclick="klikk(this)">1</button>
+        <button onclick="klikk(this)">2</button>
+        <button onclick="klikk(this)">3</button><br/>
+        <button onclick="klikk(this)">4</button>
+        <button onclick="klikk(this)">5</button>
+        <button onclick="klikk(this)">6</button><br/>
+        <button onclick="klikk(this)">7</button>
+        <button onclick="klikk(this)">8</button>
+        <button onclick="klikk(this)">9</button>
+
+        <h2 id="out"></h2>
+
+        <script>
+            function klikk(A) {
+               document.getElementById('out').innerHTML += A.innerHTML;
+               console.log (A.innerHTML);
+            }
+        </script>
+        <!--
+        <p>Ferdightet 4 - Variabel utenfor funksjon og innenfor funksjon, samt sette sammen text av flere deler</p>
+        <button onclick="tell()">Tell!</button>
+        <input type="text" id="input"/>
+        <button onclick="commit()">commit text input</button>
+        <div id="info">Trykk på tell knappen!</div>
+        <script>
+            var tallA = 0;
+            var tekstA = 'textA';
+
+            function tell() {
+                var tallB = 0;
+                var tekstB = 'textB';
+
+                tallA++;
+                tallB++;
+                tekstA += '*';
+                tekstB += '*';
+
+                document.getElementById('info').innerHTML =
+                    'TallA=' + tallA +
+                    '<br/>TallB=' + tallB +
+                    '<br/>TextA=' + tekstA +
+                    '<br/>TextB=' + tekstB;
+            }
+            
+        </script>
+        -->
+    </body>
+</html>
