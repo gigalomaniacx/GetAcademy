@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dateload</title>
+    </head>
+    <body onload="lasting()">
+        <h1 id='a'></h1>
+        <h1 id='b'></h1>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F4nsy2v.gif&f=1&nofb=1" />
+        <script>
+            document.getElementById('a').innerHTML = '' + new Date().toTimeString();
+
+            function lasting() {
+                document.getElementById('b').innerHTML = '' + new Date().toTimeString()
+            }
+        </script>
+    </body>
+</html>
