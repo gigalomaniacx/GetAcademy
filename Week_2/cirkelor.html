@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    <body>
+        <input id="circleWidth" oninput="calculate()" type="range" min="0" max="1000" step="1" />
+        <input id="circleHeight" oninput="calculate()" type="range" min="0" max="1000" step="1" />
+        <div id="out">temp tekst</div>
+
+        <script>
+            var cWidth = document.getElementById('circleWidth');
+            var cHeight = document.getElementById('circleHeight');
+            var outDiv = document.getElementById('out');
+            cHeight.value;
+            function calculate() {
+                var tallA = parseInt(cWidth.value);
+                var tallB = parseInt(cHeight.value);
+                var areal = tallA * tallB;
+                var omkrets = (2 * tallA) + (2 * tallB);
+
+                outDiv.innerHTML = 'Sirkel Areal = ' + areal + '<br/>'
+                + 'Sirkel omkrets = ' + omkrets + '<br/>';
+
+            }
+        </script>
+    </body>
+</html>
