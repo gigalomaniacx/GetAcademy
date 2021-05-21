@@ -5,12 +5,21 @@
     <body>
         <h2 onmouseover="mouseOver()" onmouseout="mouseOut()" onclick=h2change(this)> Hover zone</h2>
         <p id="why"></p>
-        <button onclick="clears()">reset</button>
+        <button onclick="clears()">Reset</button>
 
         <h4 id="id1">Hover result<br></h4>
+        <button onclick="imgboring()">change image</button>
+        <button onclick="imgRotat()">Rotate BananaS</button>
+        <br/>
+        <div id="changeImg">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F_NDSmr7zDPfI%2FSuvbra4_BBI%2FAAAAAAAAFk0%2FH5VkFKIXYGo%2Fs400%2FMoonrise-1.jpg&f=1&nofb=1" />
+        </div>
+
         <script>
+            var imgC = document.getElementById('changeImg');
             function clears() {
                 document.getElementById('id1').innerHTML = 'Hover result<br>';
+                imgC.innerHTML = '<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F2.bp.blogspot.com%2F_NDSmr7zDPfI%2FSuvbra4_BBI%2FAAAAAAAAFk0%2FH5VkFKIXYGo%2Fs400%2FMoonrise-1.jpg&f=1&nofb=1" />';
             }
 
             function mouseOver() {
@@ -24,6 +33,13 @@
             function h2change(A) {
                 A.innerHTML = 'You clicked the hoverzone?!!';
                 document.getElementById('why').innerHTML = "WHY!";
+            }
+
+            function imgRotat() {
+                imgC.innerHTML = '<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.imgflip.com%2F4nsy2v.gif&f=1&nofb=1" />'
+            }
+            function imgboring() {
+                imgC.innerHTML = '<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F09%2FTux%252C_gray%25EF%25BC%258Fgrey_background.png&f=1&nofb=1" />'
             }
         </script>
             
