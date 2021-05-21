@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>calc</title>
+    </head>
+
+    <body>
+        <input id="num1" type="text"/>
+        <input id="num2" type="text"/>
+        <select id="option">
+            <option value="+">Add</option>
+            <option value="-">Subtract</option>
+            <option value="*">Multiply</option>
+            <option value="/">Divide</option>
+        </select>
+        <button onclick="calculate()">calculate</button>
+        <h4 id="out">Answer</h4>
+
+        <script>
+            var number1 = document.getElementById('num1');
+            var number2 = document.getElementById('num2');
+            var option = document.getElementById('option');
+            var out = document.getElementById('out');
+
+            function calculate(){
+                num1 = parseInt(number1.value);
+                num2 = parseInt(number2.value);
+
+                out.innerHTML = num1 + option.value + num2;
+                console.log(option, num1, num2)
+            }
+
+        </script>
+    </body>
+
+</html>
