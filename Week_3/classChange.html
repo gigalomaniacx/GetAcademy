@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classChange</title>
+    <style>
+        div {
+            height: 400px;
+            width: 400px;
+            background-color: grey;
+        }
+        .class1 {
+            background-color:blueviolet;
+        }
+        .class2 {
+            background-color:orange;
+        }
+        .class3 {
+            background-color: blue;
+        }
+        .class4{
+            background-color:blueviolet;
+            border: inset 5px orange;
+        }
+        .class5{
+            background-color:orange;
+            border: outset 5px blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p>change css classes</p><br/>
+    <input id="chk1" type="checkbox" onclick="chk('class1')"/>
+    <input id="chk2" type="checkbox" onclick="chk('class2')"/>  
+    <input id="chk3" type="checkbox" onclick="chk('class3')"/>  
+    <input id="chk4" type="checkbox" onclick="chk('class4')"/>  
+    <input id="chk5" type="checkbox" onclick="chk('class5')"/>    
+    <div onclick="getDivId(document.getElementById(this))" id="div1"></div>
+    <div onclick="getDivId(this)" id="div2"></div>
+
+    <script>
+        var myDiv;
+        function getDivId(divId){
+            myDiv = document.getElementById(`${divId}`) 
+        }
+        function chk(classVal){
+            document.getElementById(`${myDiv}`).classList.toggle(`${classVal}`);
+        }
+            
+    </script>
+</body>
+</html>
