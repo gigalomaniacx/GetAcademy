@@ -32,21 +32,22 @@
 </head>
 <body>
     <p>change css classes</p><br/>
-    <input id="chk1" type="checkbox" onclick="chk('class1')"/>
-    <input id="chk2" type="checkbox" onclick="chk('class2')"/>  
-    <input id="chk3" type="checkbox" onclick="chk('class3')"/>  
-    <input id="chk4" type="checkbox" onclick="chk('class4')"/>  
-    <input id="chk5" type="checkbox" onclick="chk('class5')"/>    
-    <div onclick="getDivId(document.getElementById(this))" id="div1"></div>
-    <div onclick="getDivId(this)" id="div2"></div>
+    <input id="chk" type="checkbox" onclick="chk('class1')"/>
+    <input id="chk" type="checkbox" onclick="chk('class2')"/>  
+    <input id="chk" type="checkbox" onclick="chk('class3')"/>  
+    <input id="chk" type="checkbox" onclick="chk('class4')"/>  
+    <input id="chk" type="checkbox" onclick="chk('class5')"/>    
+    <div onclick="getDivId('div1')" id="div1"></div>
+    <div onclick="getDivId('div2')" id="div2"></div>
 
     <script>
+        // var isChecked = document.getElementById('chk').checked;
         var myDiv;
         function getDivId(divId){
-            myDiv = document.getElementById(`${divId}`) 
+            myDiv = document.getElementById(`${divId}`);
         }
         function chk(classVal){
-            document.getElementById(`${myDiv}`).classList.toggle(`${classVal}`);
+            myDiv.classList.toggle(`${classVal}`/*, isChecked*/);
         }
             
     </script>
