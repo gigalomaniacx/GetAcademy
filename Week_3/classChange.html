@@ -32,7 +32,7 @@
 </head>
 <body>
     <p>change css classes</p><br/>
-    <input id="chk" type="checkbox" onchange="toggleStyle()"/>
+    <input id="chk1" type="checkbox" onchange="chk('class1')"/>
     <input id="chk2" type="checkbox" onchange="chk('class2')"/>  
     <input id="chk3" type="checkbox" onchange="chk('class3')"/>  
     <input id="chk4" type="checkbox" onchange="chk('class4')"/>  
@@ -41,19 +41,29 @@
     <div onclick="getDivId('div2')" id="div2"></div>
 
     <script>
+
         // var isChecked = document.getElementById('chk').checked;
         var myDiv = document.getElementById('div1');
         function getDivId(divId){
             myDiv = document.getElementById(`${divId}`);
+            getCheckedStatus('chk1').checked = myDiv.classList.contains('class1');
+            getCheckedStatus('chk2').checked = myDiv.classList.contains('class2');
+            getCheckedStatus('chk3').checked = myDiv.classList.contains('class3');
+            getCheckedStatus('chk4').checked = myDiv.classList.contains('class4');
+            getCheckedStatus('chk5').checked = myDiv.classList.contains('class5');
         }
         function chk(classVal){
             myDiv.classList.toggle(`${classVal}`/*, isChecked*/);
         }
 
-        function toggleStyle() {
-            var isChecked = document.getElementById('chk').checked;
-            document.getElementById('div1').classList.toggle('class1', isChecked);
+        function getCheckedStatus(chkId) {
+            return document.getElementById(chkId);
         }
+
+        // function toggleStyle() {
+        //     var isChecked = document.getElementById('chk').checked;
+        //     document.getElementById('div1').classList.toggle('class1', isChecked);
+        // }
             
     </script>
 </body>
