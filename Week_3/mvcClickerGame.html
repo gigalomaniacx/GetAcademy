@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC Clicker Game</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //Model
+        var points = 0;
+        var pointsPerClick = 1;
+        var upgradeCost1 =  10; 
+        var upgradeCost10 = 100;
+        
+        //upgrade cost increments:
+        var upgradeCosti = 1;
+        var upgradeCost1i = 1;
+
+        //cheating check variables:
+        var juks = false;
+        var juksMessage = '';
+
+
+
+        //Controller
+        function doClick(){
+            points += pointsPerClick;
+            beanIndex = 1 - beanIndex;
+            juksCheck();
+            updateView();
+        }
+
+        function buyUpgrade1(){
+            if (points < upgradeCost1) return;
+            n = upgradeCosti
+            points -= upgradeCost1;
+            pointsPerClick++;
+            upgradeCost1 =  100 / 10 * n;
+            upgradeCost1i++;
+            updateView();
+        }
+
+        function buyUpgrade10(){
+            if (points < upgradeCost1) return;
+            n = upgradeCost1i;
+            points -= upgradeCost1;
+            pointsPerClick += 10;
+            upgradeCost10 =  1000 / 10 * n;
+            upgradeCost10i++;
+            updateView();
+        }
+
+        function cheat() {
+            points = points * 10;
+            pointsPerClick = pointsPerClick * 10;
+            juks = true;
+        }
+        function juksCheck() {
+            if (juks) juksMessage = '<h1>Du har jukset!</h1>';
+        }
+        
+        
+        //View
+        updateView();
+        function updateView() {
+            var beanImg = beanIndex == 0 ? '☕':'🍵';
+            document.getElementById('app').innerHTML = `
+                <div id="image" onclick="doClick()" >${beanImg}</div>
+                <div id="pointsInfo">${points}</div>
+                <button onclick="buyUpgrade1()"> kjøp oppgradering +1 click(${upgradeCost})</button>
+                <button onclick="buyUpgrade10()"> kjøp oppgradering +10 click(${upgradeCost1})</button>
+                <button onclick="cheat()">tidoble poeng(juks)</button>
+                ${juksMessage}
+                console.log(${beanIndex})
+            `;
+        }
+    </script>
+</body>
+</html>
