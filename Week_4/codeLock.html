@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodelås</title>
+    
+</head>
+<body>
+<div id="app"></div>
+<script>
+    //model
+        let correctCode = `123`;
+        let userInput = '';
+        let isCorrectCode;
+    //view
+        checkCode();
+        updateView();
+        function updateView(){
+            document.getElementById('app').innerHTML = `
+            <button onclick="klikk('1')">1</button>
+            <button onclick="klikk('2')">2</button>
+            <button onclick="klikk('3')">3</button><br/>
+            <button onclick="klikk('4')">4</button>
+            <button onclick="klikk('5')">5</button>
+            <button onclick="klikk('6')">6</button><br/>
+            <button onclick="klikk('7')">7</button>
+            <button onclick="klikk('8')">8</button>
+            <button onclick="klikk('9')">9</button><br/>
+            <button onclick="resetUserInput()">Reset</button><br/>
+
+            ${isCorrectCode}
+            `;
+        }
+    //controller
+        function klikk(valgtTall){
+            userInput += `${valgtTall}`;
+            console.log(valgtTall);
+            console.log(userInput);
+            checkCode();
+            updateView()
+        }
+        function checkCode(){
+            isCorrectCode = 
+            userInput == '' ? `Please enter a code with 3 digits` : 
+            userInput == correctCode ? `${userInput}<br/>You entered the correct code!` :
+            userInput != correctCode ? `You entered the wrong code!` :
+            'Something went terribly wrong :(';
+            updateView();
+        }
+        function resetUserInput(){
+            userInput = '';
+            checkCode();
+            updateView();
+        }
+</script>
+</body>
+</html>
