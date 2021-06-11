@@ -7,7 +7,7 @@
     <title>Multiplication matrix</title>
 </head>
 <body>
-    <input type="range" min="1" max="100" value="5"/>
+    <input onchange="changeCalc(this.value)" type="range" min="1" max="100" value="5"/>
     <div id="multiplicationMatrix"></div>
     <script>
         // hjelpevariabler for view og controller
@@ -35,6 +35,20 @@
             multiplicationMatrixDiv.style.display = 'grid';
             multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},40px)`;
         }
+
+        function changeCalc(value){
+            let columnCount = value;
+            multiplicationMatrix = [];
+
+            //Takes the value that is in this case determined bny the slider & multiplies two of the numbers
+            for (let n1 = 1; n1 <= value; n1++){
+                for (let n2 = 1; n2 <= value; n2++){
+                    multiplicationMatrix.push(n1 * n2);
+                }
+            }
+            show();
+        }
+
     </script>
 </body>
 </html>
