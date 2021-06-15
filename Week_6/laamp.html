@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <style>
+        .lightOn {
+            background-color: yellow;
+        }
+        .lamp {
+            background-color: grey;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            float: left;
+        }
+        .firstInLine {
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        let randomNum = '';
+        //View
+        show()
+        function show() {
+            let html = '';
+            for (let i = 0; i < 25; i++) {
+                let firstInLine = i % 5 == 0 ? 'firstInLine' : '';
+                html += `
+                    <div id="${i}"class="lamp ${firstInLine}"></div>
+                `;
+            }
+            document.getElementById('app').innerHTML = html;
+            
+        }
+
+        function clickedLamp() {
+            let a = randomNum;
+            // randomNum = Math.floor(Math.random() * 24);
+            document.getElementById(`${a}`).classList.toggle = "lightOn";
+            console.log(`clicked ${index}\n${randomNum}`);
+            show();
+        }
+
+        function light(){
+            randomNum = Math.floor(Math.random() * 24);
+            document.getElementById(`${randomNum}`).classList.toggle="lightOn";
+            document.getElementById(`${randomNum}`).onclick="clickedLamp()";
+            show();
+        }
+        
+    </script>
+</body>
+</html>
