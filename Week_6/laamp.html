@@ -27,7 +27,7 @@
         let starttime;
         let endtime;
         let spentmillisec;// = Math.floor(starttime - endtime);
-        var spentsec;
+        var spentsec ='0';
         let randomNum = '';
         //View
         show()
@@ -39,7 +39,7 @@
                     <div id="${i}"class="lamp ${firstInLine}"></div>
                 `;
             }
-            html += `used: ${spentsec} seconds`;
+            html += `<div class="firstInLine"><p>used: ${spentsec} seconds</p></div>`;
             document.getElementById('app').innerHTML = html;
             light();
         }
