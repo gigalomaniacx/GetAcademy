@@ -24,6 +24,10 @@
 <body>
     <div id="app"></div>
     <script>
+        let starttime;
+        let endtime;
+        let spentmillisec;// = Math.floor(starttime - endtime);
+        var spentsec;
         let randomNum = '';
         //View
         show()
@@ -35,23 +39,31 @@
                     <div id="${i}"class="lamp ${firstInLine}"></div>
                 `;
             }
+            html += `used: ${spentsec} seconds`;
             document.getElementById('app').innerHTML = html;
-            
+            light();
         }
 
         function clickedLamp() {
             let a = randomNum;
             // randomNum = Math.floor(Math.random() * 24);
-            document.getElementById(`${a}`).classList.toggle = "lightOn";
-            console.log(`clicked ${index}\n${randomNum}`);
+            document.getElementById(`${a}`).style.backgroundColor = "grey";
+            console.log(`clicked ${a}\n${randomNum}`);
+            endtime = new Date().getTime();
+            timer();
             show();
         }
 
+
         function light(){
             randomNum = Math.floor(Math.random() * 24);
-            document.getElementById(`${randomNum}`).classList.toggle="lightOn";
-            document.getElementById(`${randomNum}`).onclick="clickedLamp()";
-            show();
+            document.getElementById(`${randomNum}`).style.backgroundColor = "yellow";
+            document.getElementById(`${randomNum}`).addEventListener("click",clickedLamp);
+            starttime = new Date().getTime();
+        }
+        function timer(){
+            spentmillisec = Math.floor(endtime - starttime);
+            spentsec = spentmillisec / 1000;
         }
         
     </script>
